@@ -482,7 +482,7 @@ void _3band_EQAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
     leftHighCut.setBypassed<2>(true);
     leftHighCut.setBypassed<3>(true);
 
-    switch (chainSettings.lowCutSlope) {
+    switch (chainSettings.highCutSlope) {
     case Slope_12:
     {
         *leftHighCut.get<0>().coefficients = *cutCoefficients2[0];
@@ -531,7 +531,7 @@ void _3band_EQAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, ju
     rightHighCut.setBypassed<2>(true);
     rightHighCut.setBypassed<3>(true);
 
-    switch (chainSettings.lowCutSlope) {
+    switch (chainSettings.highCutSlope) {
     case Slope_12:
     {
         *rightHighCut.get<0>().coefficients = *cutCoefficients2[0];
